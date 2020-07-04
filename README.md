@@ -7,7 +7,7 @@
 @Language : C
 
 
-@Description : 1:M socket programming test with header.
+@Description : 1:M UDP socket programming test with header.
 
 @Date : 2020/07/05
 
