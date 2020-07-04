@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
-#include "protocol.h"
+#include "../protocol/protocol.h"
 
 #define SERVER_PORT 4000 // server port 
 typedef struct udp_client_s udp_client_t;

@@ -9,7 +9,6 @@
 */
 udp_server_t* udp_server_init(){
 	udp_server_t* server = malloc(sizeof(udp_server_t));	
-	server->data = data_init();
 	server->server_addr = malloc(sizeof(struct sockaddr_in));
 	memset(server->server_addr,0,sizeof(struct sockaddr_in));
 	server->server_addr->sin_family = AF_INET;
@@ -42,9 +41,10 @@ udp_server_t* udp_server_init(){
 */
 void udp_server_connect(udp_server_t* server){
 	int i;
+	protocol_packet_t* send_packet = protocol_packet_init();
+	protocol_packet_t* recv_packet = protocol_packet_init();
 	printf("connecting...\n");
 	printf("SOCK no : %d\n",server->SOCK);
-	printf("%s\n",server->data->DATA_BUFFER);
 	if(server->SOCK <=0){
 		free(server);
 		printf("socket fd error while connection\n");
@@ -57,17 +57,24 @@ void udp_server_connect(udp_server_t* server){
 	printf("client addr struct init done...\n");
 	while(1){
 		printf("waiting for msg\n");
-		recv_bytes = recvfrom(server->SOCK, server->data->DATA_BUFFER,BUFFER_SIZE,0,(struct sockaddr*)(&client_addr),&addr_len);
+		recv_bytes = recvfrom(server->SOCK, recv_packet,sizeof(*recv_packet),0,(struct sockaddr*)(&client_addr),&addr_len);
 		if(recv_bytes<=0){
-			printf("%d\n",recv_bytes);
-			printf("failed to recv data from client\n");
-			exit(1);
+			printf("failed to receive data\n");
+			break;
 		}
 		else{	
-			server->data->DATA_BUFFER[server->data->SIZE_OF_DATA-1] = '\0';
-			printf("Message from client : %s\n",server->data->DATA_BUFFER);
-			sendto(server->SOCK,"ACK\n",4, 0, (struct sockaddr*)(&client_addr), sizeof(client_addr));
+			if(recv_packet->header.data_type== 2) // seq_id == 2 : client sent /quit
+				continue;
+			else{			
+				protocol_print_message(recv_packet);
+				recv_packet->data[DATA_MAX_LENGTH-1] = '\0';
+				memcpy(send_packet,recv_packet,sizeof(*send_packet));
+				sendto(server->SOCK,send_packet,sizeof(*send_packet), 0, (struct sockaddr*)(&client_addr), sizeof(client_addr));
+			}
 		}
+		protocol_clean_packet(send_packet);
+		protocol_clean_packet(recv_packet);
+		protocol_increase_seq_id(send_packet);
 
 		
 	}
@@ -84,3 +91,13 @@ void udp_server_destroy(udp_server_t* server){
 	free(server);
 }
 
+
+
+int main(int argc, char* argv[]){
+	printf("openning udp server. Hail our lord James Jeong\n");
+	udp_server_t* server = udp_server_init();
+	udp_server_connect(server);
+	udp_server_destroy(server);
+	return 0;
+	
+}

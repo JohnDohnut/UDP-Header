@@ -1,0 +1,20 @@
+
+server : udp_server.o data.o
+	gcc -o server udp_server.o protocol.o
+
+
+udp_server.o : udp_server.c
+	gcc -c udp_server.c
+
+data.o : protocol.c
+	gcc -c protocol.c
+
+clean:
+	rm -rf *.o server
+
+clean_obj:
+	rm -rf *.o
+	
+remake:
+	rm -rf *.o server
+	make
