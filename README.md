@@ -2,7 +2,7 @@
 
 @Author : GunJoong Lee
 
-@Skill : UDP Socket Programming
+@Skill : UDP Socket Programming, GNU make
 
 @Language : C
 
@@ -14,8 +14,6 @@
 @Description : 1:M UDP socket programming test with header.
 
 @Date : 2020/07/05
-
-@Status : not finished.
 
 
 
