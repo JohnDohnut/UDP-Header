@@ -6,7 +6,7 @@
 
 @Language : C
 
-@Environment : Ubuntu 18.04.3 LTS
+@Environment : CentOS Linux 7
 
 @Compiler : gcc version 7.5.0
 
