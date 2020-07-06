@@ -1,0 +1,118 @@
+\hypertarget{protocol_8h}{\section{protocol/protocol.h File Reference}
+\label{protocol_8h}\index{protocol/protocol.\-h@{protocol/protocol.\-h}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\\*
+{\ttfamily \#include $<$memory.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structprotocol__header__s}{protocol\-\_\-header\-\_\-s}
+\item 
+struct \hyperlink{structprotocol__packet__s}{protocol\-\_\-packet\-\_\-s}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{protocol_8h_aa8419520a9e937dc2fb549714facd7ce}{\-\_\-\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-\_\-\-\_\-}
+\item 
+\#define \hyperlink{protocol_8h_a8c73d698b94b0897bba85eee3456cc84}{D\-A\-T\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}~1024
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structprotocol__header__s}{protocol\-\_\-header\-\_\-s} \hyperlink{protocol_8h_a814cc009338b6a912057b87256b5c799}{protocol\-\_\-header\-\_\-t}
+\item 
+typedef struct \hyperlink{structprotocol__packet__s}{protocol\-\_\-packet\-\_\-s} \hyperlink{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{protocol\-\_\-packet\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{protocol\-\_\-packet\-\_\-t} $\ast$ \hyperlink{protocol_8h_a9d367d3ffe90e60d9b95f32cf8af452f}{protocol\-\_\-packet\-\_\-init} ()
+\item 
+void \hyperlink{protocol_8h_a726a4f6a3ab4d0e2bd956887d9b8c6bb}{protocol\-\_\-packet\-\_\-destroy} (\hyperlink{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{protocol\-\_\-packet\-\_\-t} $\ast$packet)
+\item 
+int \hyperlink{protocol_8h_aae1c381cf2560b11f495c545e403e221}{protocol\-\_\-get\-\_\-data\-\_\-len} (\hyperlink{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{protocol\-\_\-packet\-\_\-t} $\ast$packet)
+\item 
+int \hyperlink{protocol_8h_a4c0ce51f0ea1c531c3ab18d099a954be}{protocol\-\_\-set\-\_\-message} (\hyperlink{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{protocol\-\_\-packet\-\_\-t} $\ast$packet, char $\ast$data\-\_\-buffer)
+\item 
+void \hyperlink{protocol_8h_a508cff433ecea2b6e7661d350e16b269}{protocol\-\_\-print\-\_\-message} (\hyperlink{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{protocol\-\_\-packet\-\_\-t} $\ast$packet)
+\item 
+void \hyperlink{protocol_8h_a5af1e2adcda0bf2d9e35bc82bf4f3d81}{protocol\-\_\-increase\-\_\-seq\-\_\-id} (\hyperlink{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{protocol\-\_\-packet\-\_\-t} $\ast$packet)
+\item 
+int \hyperlink{protocol_8h_a3b0681ea68b113688f5cb6d8170b72e2}{protocol\-\_\-clean\-\_\-packet} (\hyperlink{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{protocol\-\_\-packet\-\_\-t} $\ast$packet)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{protocol_8h_aa8419520a9e937dc2fb549714facd7ce}{\index{protocol.\-h@{protocol.\-h}!\-\_\-\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-\_\-\-\_\-@{\-\_\-\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-\_\-\-\_\-@{\-\_\-\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-\_\-\-\_\-}!protocol.h@{protocol.\-h}}
+\subsubsection[{\-\_\-\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-\_\-\-\_\-}}\label{protocol_8h_aa8419520a9e937dc2fb549714facd7ce}
+client includes client.\-h, \hyperlink{protocol_8h}{protocol.\-h} server includes server.\-h, \hyperlink{protocol_8h}{protocol.\-h} definition of data packet is dettached from server.\-h, client.\-h Header and Data buffer is seperated in packet. \hypertarget{protocol_8h_a8c73d698b94b0897bba85eee3456cc84}{\index{protocol.\-h@{protocol.\-h}!D\-A\-T\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H@{D\-A\-T\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{D\-A\-T\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H@{D\-A\-T\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}!protocol.h@{protocol.\-h}}
+\subsubsection[{D\-A\-T\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-A\-T\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N\-G\-T\-H~1024}}\label{protocol_8h_a8c73d698b94b0897bba85eee3456cc84}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{protocol_8h_a814cc009338b6a912057b87256b5c799}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-header\-\_\-t@{protocol\-\_\-header\-\_\-t}}
+\index{protocol\-\_\-header\-\_\-t@{protocol\-\_\-header\-\_\-t}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-header\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf protocol\-\_\-header\-\_\-s} {\bf protocol\-\_\-header\-\_\-t}}}\label{protocol_8h_a814cc009338b6a912057b87256b5c799}
+\hypertarget{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-packet\-\_\-t@{protocol\-\_\-packet\-\_\-t}}
+\index{protocol\-\_\-packet\-\_\-t@{protocol\-\_\-packet\-\_\-t}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-packet\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf protocol\-\_\-packet\-\_\-s} {\bf protocol\-\_\-packet\-\_\-t}}}\label{protocol_8h_a94638c2eac754fb765fc445f6bb488fe}
+
+
+\subsection{Function Documentation}
+\hypertarget{protocol_8h_a3b0681ea68b113688f5cb6d8170b72e2}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-clean\-\_\-packet@{protocol\-\_\-clean\-\_\-packet}}
+\index{protocol\-\_\-clean\-\_\-packet@{protocol\-\_\-clean\-\_\-packet}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-clean\-\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}int protocol\-\_\-clean\-\_\-packet (
+\begin{DoxyParamCaption}
+\item[{{\bf protocol\-\_\-packet\-\_\-t} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)}}\label{protocol_8h_a3b0681ea68b113688f5cb6d8170b72e2}
+\hypertarget{protocol_8h_aae1c381cf2560b11f495c545e403e221}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-get\-\_\-data\-\_\-len@{protocol\-\_\-get\-\_\-data\-\_\-len}}
+\index{protocol\-\_\-get\-\_\-data\-\_\-len@{protocol\-\_\-get\-\_\-data\-\_\-len}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-get\-\_\-data\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}int protocol\-\_\-get\-\_\-data\-\_\-len (
+\begin{DoxyParamCaption}
+\item[{{\bf protocol\-\_\-packet\-\_\-t} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)}}\label{protocol_8h_aae1c381cf2560b11f495c545e403e221}
+\hypertarget{protocol_8h_a5af1e2adcda0bf2d9e35bc82bf4f3d81}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-increase\-\_\-seq\-\_\-id@{protocol\-\_\-increase\-\_\-seq\-\_\-id}}
+\index{protocol\-\_\-increase\-\_\-seq\-\_\-id@{protocol\-\_\-increase\-\_\-seq\-\_\-id}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-increase\-\_\-seq\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}void protocol\-\_\-increase\-\_\-seq\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{{\bf protocol\-\_\-packet\-\_\-t} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)}}\label{protocol_8h_a5af1e2adcda0bf2d9e35bc82bf4f3d81}
+\hypertarget{protocol_8h_a726a4f6a3ab4d0e2bd956887d9b8c6bb}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-packet\-\_\-destroy@{protocol\-\_\-packet\-\_\-destroy}}
+\index{protocol\-\_\-packet\-\_\-destroy@{protocol\-\_\-packet\-\_\-destroy}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-packet\-\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void protocol\-\_\-packet\-\_\-destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf protocol\-\_\-packet\-\_\-t} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)}}\label{protocol_8h_a726a4f6a3ab4d0e2bd956887d9b8c6bb}
+\hypertarget{protocol_8h_a9d367d3ffe90e60d9b95f32cf8af452f}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-packet\-\_\-init@{protocol\-\_\-packet\-\_\-init}}
+\index{protocol\-\_\-packet\-\_\-init@{protocol\-\_\-packet\-\_\-init}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-packet\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf protocol\-\_\-packet\-\_\-t}$\ast$ protocol\-\_\-packet\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{protocol_8h_a9d367d3ffe90e60d9b95f32cf8af452f}
+\hypertarget{protocol_8h_a508cff433ecea2b6e7661d350e16b269}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-print\-\_\-message@{protocol\-\_\-print\-\_\-message}}
+\index{protocol\-\_\-print\-\_\-message@{protocol\-\_\-print\-\_\-message}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-print\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void protocol\-\_\-print\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf protocol\-\_\-packet\-\_\-t} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)}}\label{protocol_8h_a508cff433ecea2b6e7661d350e16b269}
+\hypertarget{protocol_8h_a4c0ce51f0ea1c531c3ab18d099a954be}{\index{protocol.\-h@{protocol.\-h}!protocol\-\_\-set\-\_\-message@{protocol\-\_\-set\-\_\-message}}
+\index{protocol\-\_\-set\-\_\-message@{protocol\-\_\-set\-\_\-message}!protocol.h@{protocol.\-h}}
+\subsubsection[{protocol\-\_\-set\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}int protocol\-\_\-set\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf protocol\-\_\-packet\-\_\-t} $\ast$}]{packet, }
+\item[{char $\ast$}]{data\-\_\-buffer}
+\end{DoxyParamCaption}
+)}}\label{protocol_8h_a4c0ce51f0ea1c531c3ab18d099a954be}

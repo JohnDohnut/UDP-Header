@@ -30,14 +30,10 @@ udp_server_t* udp_server_init(){
 	return server;
 }
 /**
-*@brief server listen
+*@brief echo server listen and send message back to client.
 *@param udp_server_t*
 *@detail
-*recieve data from client using recvfrom and send "ACK\n" if recv_bytes>0. 
-*If recv_bytes<0, then exit().
-*Since SIGINT is only way to terminate the program, for now, we need to add handler for SIGINT, which escape this function so udp_server_destroy can be called.
-*By adding some conditions, it's possible to vary the response message of server. 
-*But it will cost resource.
+*If message == "/quit", then don't send back.
 */
 void udp_server_connect(udp_server_t* server){
 	int i;
@@ -91,7 +87,12 @@ void udp_server_destroy(udp_server_t* server){
 	free(server);
 }
 
-
+/**
+*@fn int main(int argc, char* argv[])
+*
+*
+*
+*/
 
 int main(int argc, char* argv[]){
 	printf("openning udp server. Hail our lord James Jeong\n");

@@ -1,0 +1,92 @@
+\hypertarget{udp__client_8h}{\section{client/udp\-\_\-client.h File Reference}
+\label{udp__client_8h}\index{client/udp\-\_\-client.\-h@{client/udp\-\_\-client.\-h}}
+}
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$memory.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}../protocol/protocol.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structudp__client__s}{udp\-\_\-client\-\_\-s}
+\begin{DoxyCompactList}\small\item\em struct to contain F\-D of S\-O\-C\-K\-E\-T and sockaddr\-\_\-in$\ast$ of server\-\_\-addr \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{udp__client_8h_ac42367fe5c999ec6650de83e9d72fe8c}{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T}~4000
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structudp__client__s}{udp\-\_\-client\-\_\-s} \hyperlink{udp__client_8h_a8958db3a0a58e306173132d736778afe}{udp\-\_\-client\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{udp__client_8h_a8958db3a0a58e306173132d736778afe}{udp\-\_\-client\-\_\-t} $\ast$ \hyperlink{udp__client_8h_a3dc544e9c7e94eec59f3c8af10457bc8}{udp\-\_\-client\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em initialize and return udp\-\_\-client\-\_\-t$\ast$ \end{DoxyCompactList}\item 
+void \hyperlink{udp__client_8h_aa872b4d64df059900c77bda1757b7560}{udp\-\_\-client\-\_\-connect} (\hyperlink{udp__client_8h_a8958db3a0a58e306173132d736778afe}{udp\-\_\-client\-\_\-t} $\ast$client)
+\begin{DoxyCompactList}\small\item\em send message to server and recieve response message from server. \end{DoxyCompactList}\item 
+void \hyperlink{udp__client_8h_a2f72a8dd829b2d551f5b090b5d79a296}{udp\-\_\-client\-\_\-destroy} (\hyperlink{udp__client_8h_a8958db3a0a58e306173132d736778afe}{udp\-\_\-client\-\_\-t} $\ast$client)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{udp__client_8h_ac42367fe5c999ec6650de83e9d72fe8c}{\index{udp\-\_\-client.\-h@{udp\-\_\-client.\-h}!S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T@{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T}}
+\index{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T@{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T}!udp_client.h@{udp\-\_\-client.\-h}}
+\subsubsection[{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T~4000}}\label{udp__client_8h_ac42367fe5c999ec6650de83e9d72fe8c}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{udp__client_8h_a8958db3a0a58e306173132d736778afe}{\index{udp\-\_\-client.\-h@{udp\-\_\-client.\-h}!udp\-\_\-client\-\_\-t@{udp\-\_\-client\-\_\-t}}
+\index{udp\-\_\-client\-\_\-t@{udp\-\_\-client\-\_\-t}!udp_client.h@{udp\-\_\-client.\-h}}
+\subsubsection[{udp\-\_\-client\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf udp\-\_\-client\-\_\-s} {\bf udp\-\_\-client\-\_\-t}}}\label{udp__client_8h_a8958db3a0a58e306173132d736778afe}
+
+
+\subsection{Function Documentation}
+\hypertarget{udp__client_8h_aa872b4d64df059900c77bda1757b7560}{\index{udp\-\_\-client.\-h@{udp\-\_\-client.\-h}!udp\-\_\-client\-\_\-connect@{udp\-\_\-client\-\_\-connect}}
+\index{udp\-\_\-client\-\_\-connect@{udp\-\_\-client\-\_\-connect}!udp_client.h@{udp\-\_\-client.\-h}}
+\subsubsection[{udp\-\_\-client\-\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}void udp\-\_\-client\-\_\-connect (
+\begin{DoxyParamCaption}
+\item[{{\bf udp\-\_\-client\-\_\-t} $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{udp__client_8h_aa872b4d64df059900c77bda1757b7560}
+
+
+send message to server and recieve response message from server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em udp\-\_\-client\-\_\-t$\ast$} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{udp__client_8h_a2f72a8dd829b2d551f5b090b5d79a296}{\index{udp\-\_\-client.\-h@{udp\-\_\-client.\-h}!udp\-\_\-client\-\_\-destroy@{udp\-\_\-client\-\_\-destroy}}
+\index{udp\-\_\-client\-\_\-destroy@{udp\-\_\-client\-\_\-destroy}!udp_client.h@{udp\-\_\-client.\-h}}
+\subsubsection[{udp\-\_\-client\-\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void udp\-\_\-client\-\_\-destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf udp\-\_\-client\-\_\-t} $\ast$}]{client}
+\end{DoxyParamCaption}
+)}}\label{udp__client_8h_a2f72a8dd829b2d551f5b090b5d79a296}
+release udp\-\_\-client\-\_\-t$\ast$ client 
+\begin{DoxyParams}{Parameters}
+{\em udp\-\_\-client\-\_\-t$\ast$} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{udp__client_8h_a3dc544e9c7e94eec59f3c8af10457bc8}{\index{udp\-\_\-client.\-h@{udp\-\_\-client.\-h}!udp\-\_\-client\-\_\-init@{udp\-\_\-client\-\_\-init}}
+\index{udp\-\_\-client\-\_\-init@{udp\-\_\-client\-\_\-init}!udp_client.h@{udp\-\_\-client.\-h}}
+\subsubsection[{udp\-\_\-client\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf udp\-\_\-client\-\_\-t}$\ast$ udp\-\_\-client\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{udp__client_8h_a3dc544e9c7e94eec59f3c8af10457bc8}
+
+
+initialize and return udp\-\_\-client\-\_\-t$\ast$ 
+
+\begin{DoxyReturn}{Returns}
+udp\-\_\-client\-\_\-t$\ast$  initializing process includes socket(). using port 4000. if fail to socket(), then exit program. 
+\end{DoxyReturn}

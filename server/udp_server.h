@@ -15,11 +15,11 @@
 
 typedef struct udp_server_s udp_server_t;
 struct udp_server_s{
-	int SOCK;	//fd for socket
-	struct sockaddr_in* server_addr;//srtucture manage server address
+	int SOCK;	///fd for socket
+	struct sockaddr_in* server_addr;///srtucture manage server address
 
 };
-udp_server_t* udp_server_init();//initialize and return udp_server_t*, socket() and bind(),
-void udp_server_connect(udp_server_t* server);// server listen.
-void udp_server_destroy(udp_server_t* server);// destroy udp_server_t* server and terminate the server. (Currently SIGINT is only way to terminate the program.)
+udp_server_t* udp_server_init();/// Initialize and return udp_server_t*, socket() and bind(),
+void udp_server_connect(udp_server_t* server);/// Server listen.
+void udp_server_destroy(udp_server_t* server);/// Destroy udp_server_t* server and terminate the server. (Currently SIGINT is only way to terminate the program.)
 #endif

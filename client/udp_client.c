@@ -2,6 +2,7 @@
 
 
 /**
+*@fn udp_client_t* udp_client_init()
 *@brief initialize and return udp_client_t*
 *@return udp_client_t*
 *@detail
@@ -26,14 +27,9 @@ udp_client_t* udp_client_init(){
 	return client;
 }
 /**
+*@fn void udp_client_connect(udp_client_t* client)
 *@brief send message to server and recieve response message from server.
 *@param udp_client_t*
-*@detail
-*We can define various response message based on protocol which users(of both server and client).
-*In this case, server simply sends "ACK\n" if server recieved message.
-*However, Since we don't know actual recieve byte of server, it's vulnerable to partially damaged message.
-*But since I hate numbers, I simply get "ACK\n". 
-*Also, to get exact length of string which were sent, strlen() will be more precise than using sendbytes.
 */
 void udp_client_connect(udp_client_t* client){
 	ssize_t sendbytes;
@@ -79,6 +75,7 @@ void udp_client_connect(udp_client_t* client){
 		printf("recv bytes : %d\n",recvbytes);		
 		if(recvbytes<=0){
 			printf("recv error \n");
+			continue;
 		}
 		else{
 			printf("response from server\n\n");
@@ -96,11 +93,9 @@ void udp_client_connect(udp_client_t* client){
 
 }
 /**
+*@fn void udp_client_destroy(udp_client_t* client)
 *@breif release udp_client_t* client
 *@param udp_client_t*
-*@detail 
-*Since there's no way to terminante the program without using SIGINT, this function will never be called.
-*So handler for SIGINT or user defined command is needed to terminate program stably. 
 */
 void udp_client_destroy(udp_client_t* client){
 
@@ -108,7 +103,21 @@ void udp_client_destroy(udp_client_t* client){
 	free(client);
 	
 }
+/**
+*@mainpage UDP Socket Programming With Header
+*@section info INFO
+*@subsection Client Client
+*UDP Socket communication Client
+*@subsection Server Server
+*UDP Socket communication Server
+*/
 
+/**
+*@fn int main(int argc, char* argv[])
+*@return int
+*@param argc 
+*@param argv
+*/
 int main(int argc, char* argv[]){
 	printf("openning udp client. Hail our lord James Jeong\n");
 	udp_client_t* client = udp_client_init();

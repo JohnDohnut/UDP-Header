@@ -1,0 +1,100 @@
+\hypertarget{udp__server_8h}{\section{server/udp\-\_\-server.h File Reference}
+\label{udp__server_8h}\index{server/udp\-\_\-server.\-h@{server/udp\-\_\-server.\-h}}
+}
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$memory.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}../protocol/protocol.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structudp__server__s}{udp\-\_\-server\-\_\-s}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{udp__server_8h_ac42367fe5c999ec6650de83e9d72fe8c}{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T}~4000
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structudp__server__s}{udp\-\_\-server\-\_\-s} \hyperlink{udp__server_8h_adf262f96419cf45ef5f60c5cd828b8ed}{udp\-\_\-server\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{udp__server_8h_adf262f96419cf45ef5f60c5cd828b8ed}{udp\-\_\-server\-\_\-t} $\ast$ \hyperlink{udp__server_8h_a8a067d98fef61ac4a2945a33bf7da1db}{udp\-\_\-server\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em initialize and return udp\-\_\-server\-\_\-t$\ast$ \end{DoxyCompactList}\item 
+void \hyperlink{udp__server_8h_a69a9fac290584e99a7bc78dbdf958f89}{udp\-\_\-server\-\_\-connect} (\hyperlink{udp__server_8h_adf262f96419cf45ef5f60c5cd828b8ed}{udp\-\_\-server\-\_\-t} $\ast$server)
+\begin{DoxyCompactList}\small\item\em Initialize and return udp\-\_\-server\-\_\-t$\ast$, socket() and bind(),. \end{DoxyCompactList}\item 
+void \hyperlink{udp__server_8h_a192e2b8e9bf32ae18fd75430b01f4ae1}{udp\-\_\-server\-\_\-destroy} (\hyperlink{udp__server_8h_adf262f96419cf45ef5f60c5cd828b8ed}{udp\-\_\-server\-\_\-t} $\ast$server)
+\begin{DoxyCompactList}\small\item\em Server listen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{udp__server_8h_ac42367fe5c999ec6650de83e9d72fe8c}{\index{udp\-\_\-server.\-h@{udp\-\_\-server.\-h}!S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T@{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T}}
+\index{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T@{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T}!udp_server.h@{udp\-\_\-server.\-h}}
+\subsubsection[{S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T~4000}}\label{udp__server_8h_ac42367fe5c999ec6650de83e9d72fe8c}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{udp__server_8h_adf262f96419cf45ef5f60c5cd828b8ed}{\index{udp\-\_\-server.\-h@{udp\-\_\-server.\-h}!udp\-\_\-server\-\_\-t@{udp\-\_\-server\-\_\-t}}
+\index{udp\-\_\-server\-\_\-t@{udp\-\_\-server\-\_\-t}!udp_server.h@{udp\-\_\-server.\-h}}
+\subsubsection[{udp\-\_\-server\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf udp\-\_\-server\-\_\-s} {\bf udp\-\_\-server\-\_\-t}}}\label{udp__server_8h_adf262f96419cf45ef5f60c5cd828b8ed}
+
+
+\subsection{Function Documentation}
+\hypertarget{udp__server_8h_a69a9fac290584e99a7bc78dbdf958f89}{\index{udp\-\_\-server.\-h@{udp\-\_\-server.\-h}!udp\-\_\-server\-\_\-connect@{udp\-\_\-server\-\_\-connect}}
+\index{udp\-\_\-server\-\_\-connect@{udp\-\_\-server\-\_\-connect}!udp_server.h@{udp\-\_\-server.\-h}}
+\subsubsection[{udp\-\_\-server\-\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}void udp\-\_\-server\-\_\-connect (
+\begin{DoxyParamCaption}
+\item[{{\bf udp\-\_\-server\-\_\-t} $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{udp__server_8h_a69a9fac290584e99a7bc78dbdf958f89}
+
+
+Initialize and return udp\-\_\-server\-\_\-t$\ast$, socket() and bind(),. 
+
+Initialize and return udp\-\_\-server\-\_\-t$\ast$, socket() and bind(),.
+
+
+\begin{DoxyParams}{Parameters}
+{\em udp\-\_\-server\-\_\-t$\ast$} & If message == \char`\"{}/quit\char`\"{}, then don't send back. \\
+\hline
+\end{DoxyParams}
+\hypertarget{udp__server_8h_a192e2b8e9bf32ae18fd75430b01f4ae1}{\index{udp\-\_\-server.\-h@{udp\-\_\-server.\-h}!udp\-\_\-server\-\_\-destroy@{udp\-\_\-server\-\_\-destroy}}
+\index{udp\-\_\-server\-\_\-destroy@{udp\-\_\-server\-\_\-destroy}!udp_server.h@{udp\-\_\-server.\-h}}
+\subsubsection[{udp\-\_\-server\-\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void udp\-\_\-server\-\_\-destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf udp\-\_\-server\-\_\-t} $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{udp__server_8h_a192e2b8e9bf32ae18fd75430b01f4ae1}
+
+
+Server listen. 
+
+Server listen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em udp\-\_\-server\-\_\-t$\ast$} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{udp__server_8h_a8a067d98fef61ac4a2945a33bf7da1db}{\index{udp\-\_\-server.\-h@{udp\-\_\-server.\-h}!udp\-\_\-server\-\_\-init@{udp\-\_\-server\-\_\-init}}
+\index{udp\-\_\-server\-\_\-init@{udp\-\_\-server\-\_\-init}!udp_server.h@{udp\-\_\-server.\-h}}
+\subsubsection[{udp\-\_\-server\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf udp\-\_\-server\-\_\-t}$\ast$ udp\-\_\-server\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{udp__server_8h_a8a067d98fef61ac4a2945a33bf7da1db}
+
+
+initialize and return udp\-\_\-server\-\_\-t$\ast$ 
+
+\begin{DoxyReturn}{Returns}
+udp\-\_\-server\-\_\-t$\ast$  initializing process includes socket() and bind() using port 4000. if fail to socket() or bind(), exit program. 
+\end{DoxyReturn}
