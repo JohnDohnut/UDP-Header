@@ -8,12 +8,12 @@
 
 @Environment : CentOS Linux 7
 
-@Compiler : gcc version 7.5.0
+@Compiler : gcc 4.8.5 (Red Hat 4.8.5-39) (GCC)
 
 
 @Description : 1:M UDP socket programming test with header.
 
-@Date : 2020/07/05
+@Date : 2020/07/06
 
 
 
