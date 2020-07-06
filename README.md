@@ -1,8 +1,8 @@
-# UDP-Header
+# UDP WITH Header
 
 @Author : GunJoong Lee
 
-@Skill : UDP Socket Programming
+@Skill : UDP Socket Programming, GNU make
 
 @Language : C
 
@@ -15,11 +15,10 @@
 
 @Date : 2020/07/05
 
-@Status : not finished.
-
 
 
 @Reference : DongWook Jeong (https://github.com/James-Jeong/udp_socket_test/)
+
 
 
 
